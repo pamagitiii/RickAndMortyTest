@@ -8,9 +8,13 @@
 import Foundation
 
 protocol MainViewProtocol: AnyObject {
-
+    func didLoadData()
 }
 
 protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol)
+    init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
+    var characters: [Character] { get }
+    
+    func viewDidLoad()
+    func willDisplay(at index: Int)
 }

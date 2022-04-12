@@ -19,7 +19,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupCollectionVeiw()
-        //presenter.viewDidLoad
+        presenter.viewDidLoad()
     }
     
     private func setupUI() {
@@ -49,20 +49,18 @@ final class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return presenter.characters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(cellType: CharacterCell.self, for: indexPath)
+        let character = presenter.characters[indexPath.item]
+        cell.setup(with: character)
         return cell
     }
-    
-    
-    
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
-    
     
     //указать через глобальные переменные
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -75,9 +73,17 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         
         return CGFloat(32)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        presenter.willDisplay(at: indexPath.item)
+    }
 }
 
 //MARK: - view protocol
 extension MainViewController: MainViewProtocol {
+    func didLoadData() {
+        collectionView.reloadData()
+    }
+    
     
 }

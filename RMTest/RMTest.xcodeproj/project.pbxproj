@@ -9,15 +9,23 @@
 /* Begin PBXBuildFile section */
 		B62CF1C90BA23460E9FE125A /* Pods_RMTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61016ED2CAF26AFDF81AEB3C /* Pods_RMTest.framework */; };
 		CEAF84072804C0F4006BDF4B /* DropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF84062804C0F4006BDF4B /* DropShadowView.swift */; };
+		CEAF840A280574A6006BDF4B /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF8409280574A6006BDF4B /* StatusView.swift */; };
+		CEAF840C280582CC006BDF4B /* WatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF840B280582CC006BDF4B /* WatchButton.swift */; };
+		CEAF840E2805A400006BDF4B /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF840D2805A400006BDF4B /* NetworkServiceProtocol.swift */; };
+		CEAF84112805A762006BDF4B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF84102805A762006BDF4B /* Response.swift */; };
+		CEAF84132805A79B006BDF4B /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF84122805A79B006BDF4B /* Info.swift */; };
+		CEAF84152805A8F7006BDF4B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF84142805A8F7006BDF4B /* API.swift */; };
+		CEAF84172805A965006BDF4B /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF84162805A965006BDF4B /* URLFactory.swift */; };
+		CEAF84192805AF06006BDF4B /* NetworkService+Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF84182805AF06006BDF4B /* NetworkService+Characters.swift */; };
+		CEAF841B2805B5B9006BDF4B /* LoadingDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF841A2805B5B9006BDF4B /* LoadingDataType.swift */; };
 		CEE1E49C28041EAD0097C823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E49B28041EAD0097C823 /* AppDelegate.swift */; };
 		CEE1E49E28041EAD0097C823 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E49D28041EAD0097C823 /* SceneDelegate.swift */; };
 		CEE1E4A528041EAF0097C823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE1E4A428041EAF0097C823 /* Assets.xcassets */; };
 		CEE1E4A828041EAF0097C823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE1E4A628041EAF0097C823 /* LaunchScreen.storyboard */; };
 		CEE1E4B3280423420097C823 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4B2280423420097C823 /* MainViewController.swift */; };
 		CEE1E4B5280423500097C823 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4B4280423500097C823 /* MainPresenter.swift */; };
-		CEE1E4B7280423630097C823 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4B6280423630097C823 /* Model.swift */; };
+		CEE1E4B7280423630097C823 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4B6280423630097C823 /* Character.swift */; };
 		CEE1E4BB280428410097C823 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4BA280428410097C823 /* MainProtocols.swift */; };
-		CEE1E4BE280429C00097C823 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4BD280429C00097C823 /* CustomCell.swift */; };
 		CEE1E4C128042A0A0097C823 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4C028042A0A0097C823 /* UITableView+.swift */; };
 		CEE1E4C328042AF40097C823 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4C228042AF40097C823 /* NetworkService.swift */; };
 		CEE1E4C528042B460097C823 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1E4C428042B460097C823 /* UIView+.swift */; };
@@ -31,6 +39,15 @@
 		3F7F9166FB560C7433B343F9 /* Pods-RMTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RMTest.debug.xcconfig"; path = "Target Support Files/Pods-RMTest/Pods-RMTest.debug.xcconfig"; sourceTree = "<group>"; };
 		61016ED2CAF26AFDF81AEB3C /* Pods_RMTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RMTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAF84062804C0F4006BDF4B /* DropShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropShadowView.swift; sourceTree = "<group>"; };
+		CEAF8409280574A6006BDF4B /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		CEAF840B280582CC006BDF4B /* WatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchButton.swift; sourceTree = "<group>"; };
+		CEAF840D2805A400006BDF4B /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		CEAF84102805A762006BDF4B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		CEAF84122805A79B006BDF4B /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		CEAF84142805A8F7006BDF4B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CEAF84162805A965006BDF4B /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
+		CEAF84182805AF06006BDF4B /* NetworkService+Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Characters.swift"; sourceTree = "<group>"; };
+		CEAF841A2805B5B9006BDF4B /* LoadingDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDataType.swift; sourceTree = "<group>"; };
 		CEE1E49828041EAD0097C823 /* RMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE1E49B28041EAD0097C823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE1E49D28041EAD0097C823 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,9 +56,8 @@
 		CEE1E4A928041EAF0097C823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE1E4B2280423420097C823 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEE1E4B4280423500097C823 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		CEE1E4B6280423630097C823 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CEE1E4B6280423630097C823 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CEE1E4BA280428410097C823 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
-		CEE1E4BD280429C00097C823 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		CEE1E4C028042A0A0097C823 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		CEE1E4C228042AF40097C823 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CEE1E4C428042B460097C823 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -79,6 +95,26 @@
 				DC74C0CA2A8FF214EBC6F54E /* Pods-RMTest.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CEAF840828056C7A006BDF4B /* CellViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF84062804C0F4006BDF4B /* DropShadowView.swift */,
+				CEAF8409280574A6006BDF4B /* StatusView.swift */,
+				CEAF840B280582CC006BDF4B /* WatchButton.swift */,
+			);
+			path = CellViews;
+			sourceTree = "<group>";
+		};
+		CEAF840F2805A519006BDF4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1E4B6280423630097C823 /* Character.swift */,
+				CEAF84102805A762006BDF4B /* Response.swift */,
+				CEAF84122805A79B006BDF4B /* Info.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CEE1E48F28041EAD0097C823 = {
@@ -147,7 +183,11 @@
 			isa = PBXGroup;
 			children = (
 				CEE1E4C228042AF40097C823 /* NetworkService.swift */,
-				CEE1E4B6280423630097C823 /* Model.swift */,
+				CEAF84182805AF06006BDF4B /* NetworkService+Characters.swift */,
+				CEAF840D2805A400006BDF4B /* NetworkServiceProtocol.swift */,
+				CEAF84142805A8F7006BDF4B /* API.swift */,
+				CEAF84162805A965006BDF4B /* URLFactory.swift */,
+				CEAF840F2805A519006BDF4B /* Model */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -165,8 +205,8 @@
 		CEE1E4BF280429D00097C823 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1E4BD280429C00097C823 /* CustomCell.swift */,
 				CEE1E4CD280492510097C823 /* CharacterCell.swift */,
+				CEAF840828056C7A006BDF4B /* CellViews */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -183,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE1E4D02804990D0097C823 /* GlobalConstants.swift */,
-				CEAF84062804C0F4006BDF4B /* DropShadowView.swift */,
+				CEAF841A2805B5B9006BDF4B /* LoadingDataType.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -303,19 +343,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAF84072804C0F4006BDF4B /* DropShadowView.swift in Sources */,
-				CEE1E4B7280423630097C823 /* Model.swift in Sources */,
+				CEE1E4B7280423630097C823 /* Character.swift in Sources */,
 				CEE1E4C128042A0A0097C823 /* UITableView+.swift in Sources */,
 				CEE1E4CA2804593C0097C823 /* UIViewController+.swift in Sources */,
+				CEAF841B2805B5B9006BDF4B /* LoadingDataType.swift in Sources */,
+				CEAF84112805A762006BDF4B /* Response.swift in Sources */,
+				CEAF840E2805A400006BDF4B /* NetworkServiceProtocol.swift in Sources */,
 				CEE1E4B3280423420097C823 /* MainViewController.swift in Sources */,
 				CEE1E4D12804990D0097C823 /* GlobalConstants.swift in Sources */,
+				CEAF84132805A79B006BDF4B /* Info.swift in Sources */,
 				CEE1E4BB280428410097C823 /* MainProtocols.swift in Sources */,
+				CEAF840C280582CC006BDF4B /* WatchButton.swift in Sources */,
+				CEAF84172805A965006BDF4B /* URLFactory.swift in Sources */,
 				CEE1E4C728042B700097C823 /* ModuleBuilder.swift in Sources */,
 				CEE1E4C528042B460097C823 /* UIView+.swift in Sources */,
 				CEE1E4C328042AF40097C823 /* NetworkService.swift in Sources */,
+				CEAF84152805A8F7006BDF4B /* API.swift in Sources */,
+				CEAF840A280574A6006BDF4B /* StatusView.swift in Sources */,
 				CEE1E4CE280492510097C823 /* CharacterCell.swift in Sources */,
 				CEE1E49C28041EAD0097C823 /* AppDelegate.swift in Sources */,
 				CEE1E49E28041EAD0097C823 /* SceneDelegate.swift in Sources */,
-				CEE1E4BE280429C00097C823 /* CustomCell.swift in Sources */,
+				CEAF84192805AF06006BDF4B /* NetworkService+Characters.swift in Sources */,
 				CEE1E4B5280423500097C823 /* MainPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +511,7 @@
 				INFOPLIST_FILE = RMTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -475,7 +524,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -492,6 +541,7 @@
 				INFOPLIST_FILE = RMTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -504,7 +554,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

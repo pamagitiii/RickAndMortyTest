@@ -17,15 +17,12 @@ enum NetworkErrors: Error {
 final class NetworkService {
     
     func baseRequest<T: Decodable>(url: String, completion: @escaping (Result<T, Error>) -> Void) {
-        
         guard let url = URL(string: url) else {
             completion(.failure(NetworkErrors.wrongURL))
             return
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            //print(url)
-            
             if let error = error {
                 DispatchQueue.main.async {
                     completion(.failure(error))

@@ -19,25 +19,20 @@ class StatusView: UIView {
         return label
     }()
     
+    //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
-//    init(status: Status) {
-//        super.init(frame: .zero)
-//        setupUI(status: status)
-//    }
-//
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - methods
     private func setupUI() {
-        
         layer.masksToBounds = false
         layer.cornerRadius = 13
-        
-        
         
         addSubviews([statusLabel])
         NSLayoutConstraint.activate([statusLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),

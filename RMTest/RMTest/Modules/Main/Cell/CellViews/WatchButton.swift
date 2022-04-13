@@ -26,7 +26,7 @@ class WatchButton: UIControl {
         return imageView
     }()
     
-    
+    //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -36,6 +36,7 @@ class WatchButton: UIControl {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - methods
     private func setupUI() {
         backgroundColor = UIColor(red: 1, green: 0.42, blue: 0, alpha: 0.1)
         
@@ -43,17 +44,11 @@ class WatchButton: UIControl {
         
         NSLayoutConstraint.activate([playImageView.widthAnchor.constraint(equalToConstant: 10),
                                      playImageView.heightAnchor.constraint(equalToConstant: 12),
-            //playImageView.topAnchor.constraint(equalTo: topAnchor, constant: 13),
-                                     //playImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
-                                     //playImageView.trailingAnchor.constraint(equalTo: imageContainerView.trailingAnchor),
                                      playImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
                                      playImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12)])
         
-        NSLayoutConstraint.activate([//label.topAnchor.constraint(equalTo: topAnchor, constant: 9),
-                                     //label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -9),
-                                     label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+        NSLayoutConstraint.activate([label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
                                      label.centerYAnchor.constraint(equalTo: centerYAnchor)])
-                                     //nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor , constant: 12)
     }
 }
 

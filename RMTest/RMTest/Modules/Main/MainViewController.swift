@@ -11,7 +11,6 @@ final class MainViewController: UIViewController {
     
     //MARK: - properties
     var presenter: MainPresenter!
-    
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     //MARK: - life cycle
@@ -22,11 +21,11 @@ final class MainViewController: UIViewController {
         presenter.viewDidLoad()
     }
     
+    //MARK: - methods
     private func setupUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Characters"
-        
         view.addSubviews([collectionView])
         
         NSLayoutConstraint.activate([collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -34,18 +33,17 @@ final class MainViewController: UIViewController {
                                      collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                                      collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
+    
     private func setupCollectionVeiw() {
         collectionView.register(CharacterCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.showsVerticalScrollIndicator = false
+        //collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 17, left: 24, bottom: 0, right: 24)
     }
-    
-    
 }
 
-//MARK: - view protocol
+//MARK: - CollectionView DataSource
 extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,9 +58,9 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - CollectionView FlowLayout
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
-    //указать через глобальные переменные
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width - collectionView.contentInset.left - collectionView.contentInset.right
         let height = CGFloat(120)
@@ -70,7 +68,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
         return CGFloat(32)
     }
     
@@ -81,9 +78,12 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - view protocol
 extension MainViewController: MainViewProtocol {
+
     func didLoadData() {
         collectionView.reloadData()
     }
     
-    
+    func showAlert(title: String, message: String) {
+       presentAlert(withTitle: title, message: message)
+    }
 }

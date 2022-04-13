@@ -37,6 +37,9 @@ class CharacterCell: UICollectionViewCell {
     let locationLabel: UILabel = {
         let label = UILabel()
         label.text = "Earth (C-500A)"
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.5
         label.textColor = UIColor(red: 0.321, green: 0.321, blue: 0.321, alpha: 1)
         label.font = .systemFont(ofSize: 14, weight: .medium)
         label.textAlignment = .left
@@ -79,10 +82,7 @@ class CharacterCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .white
-        
         sutupUI()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -90,7 +90,9 @@ class CharacterCell: UICollectionViewCell {
     }
     
     private func sutupUI() {
-        contentView.addSubviews([imageContainerView,nameLabel ,infoLabel, statusView, placemarkImageView, locationLabel, watchButton])
+        contentView.backgroundColor = .white
+        contentView.addSubviews([imageContainerView, nameLabel, infoLabel, statusView,
+                                 placemarkImageView, locationLabel, watchButton])
         
         nameLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         statusView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -99,7 +101,6 @@ class CharacterCell: UICollectionViewCell {
         NSLayoutConstraint.activate([imageContainerView.heightAnchor.constraint(equalToConstant: 120),
                                      imageContainerView.widthAnchor.constraint(equalToConstant: 120),
                                      imageContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-                                     //imageContainerView.topAnchor.constraint(equalTo: contentView.topAnchor),
                                      imageContainerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)])
         
         //картинка персонажа
@@ -130,15 +131,14 @@ class CharacterCell: UICollectionViewCell {
 
         //название локации
         NSLayoutConstraint.activate([locationLabel.centerYAnchor.constraint(equalTo: placemarkImageView.centerYAnchor),
-                                     locationLabel.leadingAnchor.constraint(equalTo: placemarkImageView.trailingAnchor, constant: 7.8)])
+                                     locationLabel.leadingAnchor.constraint(equalTo: placemarkImageView.trailingAnchor, constant: 7.8),
+                                     locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)])
         
         //кнопка просмотра
         NSLayoutConstraint.activate([watchButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -27),
                                      watchButton.widthAnchor.constraint(equalToConstant: 148),
                                      watchButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 138),
                                      watchButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 58)])
-        
-
     }
     
     func setup(with character: Character) {
@@ -150,6 +150,7 @@ class CharacterCell: UICollectionViewCell {
         
         characterImageView.kf.indicatorType = .activity
         let placeholder = UIImage(systemName: "person.fill")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+        
         //если персонаж мёртв, задаём черно-белый фильр для картинки через кингфишер
         let processor: ImageProcessor = character.statusEnum == .dead ? BlackWhiteProcessor() : DefaultImageProcessor.default
         characterImageView.kf.setImage(with: URL(string: character.imageURL),

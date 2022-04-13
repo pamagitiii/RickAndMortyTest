@@ -15,11 +15,12 @@ class MainPresenter {
     
     var characters: [Character] = []
     private var isReloading = false
-    private var page: Int = GlobalConstants.initialPage
+    private var isNextPageLoading = false
+    private var page: Int = 1
     private var maxPage = 1
     private var params: CharacterURLParameters
-
-
+    
+    
     //MARK: - init
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
@@ -28,42 +29,39 @@ class MainPresenter {
     }
 }
 
+//MARK: - presenter protocol
 extension MainPresenter: MainPresenterProtocol {
     func willDisplay(at index: Int) {
-        guard index >= 19, !(page >= maxPage) else { return }
-        load()
-        
-        
+        guard index >= 19,
+              index == (characters.count - 1),
+              !(page > maxPage),
+              !isReloading,
+              !isNextPageLoading else {
+                  return
+              }
+        isNextPageLoading = true
+        networkService.fetchCharacters(with: params) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.characters += response.results
+                self.page += 1
+                self.params.page = String(self.page)
+                self.maxPage = response.info.pages
+                self.view?.didLoadData()
+                self.isNextPageLoading = false
+            case .failure(let error):
+                self.view?.showAlert(title: "Can't load data", message: error.localizedDescription)
+            }
+        }
     }
     
     func viewDidLoad() {
-        page = GlobalConstants.initialPage
+        page = 1
         params = CharacterURLParameters(page: String(self.page))
-        
-        load()
-        
-//        networkService.fetchCharacters(with: params) { [weak self] result in
-//            guard let self = self else { return }
-//
-//            switch result {
-//            case .success(let response):
-//                self.characters = response.results
-//                self.page += 1
-//                self.params.page = String(self.page)
-//                self.maxPage = response.info.pages
-//                self.view?.didLoadData()
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//                //обработать ошибку
-//            }
-//        }
-        
-    }
-    
-    private func load() {
+        isNextPageLoading = true
         networkService.fetchCharacters(with: params) { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let response):
                 self.characters = response.results
@@ -71,12 +69,11 @@ extension MainPresenter: MainPresenterProtocol {
                 self.params.page = String(self.page)
                 self.maxPage = response.info.pages
                 self.view?.didLoadData()
+                self.isNextPageLoading = false
             case .failure(let error):
-                print(error.localizedDescription)
-                //обработать ошибку
+                self.view?.showAlert(title: "Can't load data", message: error.localizedDescription)
             }
         }
     }
-
 }
 
